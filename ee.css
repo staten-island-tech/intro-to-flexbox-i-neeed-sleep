@@ -1,0 +1,39 @@
+body,
+html
+
+body {
+    background-color: #012A36;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    text-align: center;
+}
+.card{
+    width:30%;
+    height: 400px;
+    background-color: #7E52A0;
+    color:#29274C;
+    margin: 25px 0;
+    align-content: center;
+}
+.container {
+    width: 90w;
+    background-color: #012A36;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ee {
+    max-width: 90%;
+    max-height: 60%;
+}
+.ed {
+    background-color: #E6BCCD;
+    color:#7E52A0;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 2%;
+    border-color: #29274C;
+    font-size: 80%;
+    width: 50px;
+}
