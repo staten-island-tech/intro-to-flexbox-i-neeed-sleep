@@ -2,38 +2,46 @@ body,
 html
 
 body {
-    background-color: #012A36;
+    background-color: #565264;
     font-family: 'Courier New', Courier, monospace;
 }
 h1 {
     text-align: center;
+    color: #CCB7AE;
 }
 .card{
-    width:30%;
+    width:28%;
     height: 400px;
-    background-color: #7E52A0;
-    color:#29274C;
+    background-color: #CCB7AE;
+    color:#565264;
     margin: 25px 0;
     align-content: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 10px 10px #A6808C;
 }
 .container {
     width: 90w;
-    background-color: #012A36;
+    background-color: #706677;
     margin: 30px auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 .ee {
     max-width: 90%;
-    max-height: 60%;
+    max-height: 50%;
 }
 .ed {
-    background-color: #E6BCCD;
-    color:#7E52A0;
+    background-color: #A6808C;
+    color:#D6CFCB;
     font-family: 'Courier New', Courier, monospace;
     border-radius: 2%;
-    border-color: #29274C;
+    border-color: #D6CFCB;
     font-size: 80%;
-    width: 50px;
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 3%;
+    left:40%;
 }
