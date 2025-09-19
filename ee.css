@@ -12,7 +12,7 @@ h1 {
 
 .ee {
     max-width: 90%;
-    max-height: 50%;
+    max-height: 60%;
 }
 .ed {
     background-color: #A6808C;
@@ -23,9 +23,10 @@ h1 {
     font-size: 80%;
     width: 60px;
     height: 30px;
+    transition: 0.5s;
     position: absolute;
     bottom: 3%;
-    right:40%;
+    left: calc(50% - 30px);
 }
 .card{
     width:28%;
@@ -35,8 +36,9 @@ h1 {
     margin: 25px 0;
     align-content: center;
     text-align: center;
-    position: relative;
     box-shadow: 10px 10px #A6808C;
+    transition: 0.3s;
+    position: relative;
 }
 .container {
     width: 90w;
@@ -46,16 +48,26 @@ h1 {
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
-@media screen and (max-width: 600px){
+
+.card:hover {
+    transform: scale(1.05);
+}
+.ed:hover {
+    background-color:#c297a6 ;
+    color: #565264;
+}
+
+@media screen and (max-width: 700px){
     .container {
         flex-direction: column;
+        align-content: center;
     }
     .ee {
         max-height: 280px;
         max-width: 280px;
     }
     .card{
-        width:100%;
+        width:90%;
     }
 
 }
