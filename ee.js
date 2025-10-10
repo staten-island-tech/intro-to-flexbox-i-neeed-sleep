@@ -129,28 +129,54 @@ const books = [{
 
 
 function all(){
+    const container = document.querySelector(".container");
     for (i in books){
-        DOMSelectors.display.insertAdjacentHTML(
-            "afterbegin",
-            `<div class="card">
-            <img class="img" src="${.img}"/>
-            <h2 class="artist">${.artist}</h2>
-            <h3 class="album">${.title}</h3>
-            <button class="remove btn">Remove Album</button>
+        document.diplay.insertAdjacentHTML(
+            `<div class="card" div category="${i.type}">
+                <img class="ee" src="${i.img}">
+                <h2>${i.name}</h2>
+                <h3>${i.author}</h3>
+                <a  href="${i.link}">
+                    <button class="ed"> Read </button>
+                </a>
             </div>`
         );
     }
 }
 
 function series(){
-    
+    for (i in books){
+        if (i.type=="series"){
+               
+        }        
+    }
 }
 
 function ss(){
-    
+
 }
 
-function inject(item){
-    const container = document.querySelector(".container")
-    container.insertAdjacentHTML("afterbegin", '<h1>$(item.name)</h1>')
+
+function btns(){
+
 }
+
+
+/*
+function inject(item){
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML("afterbegin", '<h1>$(item.name)</h1>');
+}
+
+function getCards(){
+    const buttons = document.querySelectorAll("buttons");
+    const btnArr = Array.from(buttons);
+    btnArr.forEach((btn => 
+        btn.addEventListener("click", function(event){
+            console.log(event.target.closest(".display-card").getAttribute("data-id"));
+        })));
+}
+getCards();
+*/
+
+//make array, put card on screen w/ js
