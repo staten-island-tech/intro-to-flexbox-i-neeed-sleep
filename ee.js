@@ -127,12 +127,7 @@ const books = [{
     link: "https://americanenglish.state.gov/files/ae/resource_files/the_cask_of_amontillado.pdf"
 }]
 
-
-function all(){
-    const container = document.querySelector(".container");
-    for (i in books){
-        document.diplay.insertAdjacentHTML(
-            `<div class="card" div category="${i.type}">
+const card = `<div class="card" div category="${i.type}">
                 <img class="ee" src="${i.img}">
                 <h2>${i.name}</h2>
                 <h3>${i.author}</h3>
@@ -140,26 +135,38 @@ function all(){
                     <button class="ed"> Read </button>
                 </a>
             </div>`
-        );
+
+
+const container = document.querySelector(".container");
+
+
+function all(){
+    for (i in books){
+        container.innerHTML('afterbegin', card);
     }
 }
 
 function series(){
     for (i in books){
         if (i.type=="series"){
-               
+            container.innerHTML('afterbegin', card);
         }        
     }
 }
 
 function ss(){
-
+    for (i in books){
+        if (i.type=="ss"){
+            container.innerHTML('afterbegin', card);
+        }        
+    }
 }
 
+all();
 
-function btns(){
-
-}
+document.querySelector(".all").addEventListener("click", all);
+document.querySelector(".ss").addEventListener("click", ss);
+document.querySelector(".series").addEventListener("click", series);
 
 
 /*
