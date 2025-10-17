@@ -127,47 +127,51 @@ const books = [{
     link: "https://americanenglish.state.gov/files/ae/resource_files/the_cask_of_amontillado.pdf"
 }]
 
-const card = `<div class="card" div category="${i.type}">
-                <img class="ee" src="${i.img}">
-                <h2>${i.name}</h2>
-                <h3>${i.author}</h3>
-                <a  href="${i.link}">
-                    <button class="ed"> Read </button>
-                </a>
-            </div>`
 
 
 const container = document.querySelector(".container");
 
 
-function all(){
-    for (i in books){
-        container.innerHTML('afterbegin', card);
-    }
+function disp(){
+    const buttons = document.querySelectorAll("button");
+    const btnArr = Array.from(buttons);
+    btnArr.forEach(btn => 
+        btn.addEventListener("click", function(show){
+            fltr = show.target.closest("button").getAttribute("class")
+            books.forEach(book => {
+                if (fltr === "all"){
+                    container.innerHTML('afterbegin', 
+                        `<div class="card">
+                            <img class="ee" src="${book.img}">
+                            <h2>${book.name}</h2>
+                            <h3>${book.author}</h3>
+                            <a  href="${book.link}">
+                                <button class="ed"> Read </button>
+                            </a>
+                        </div>`
+                    );
+                }
+                else{
+                    if (book.type === fltr){
+                        container.innerHTML('afterbegin',  
+                            `<div class="card">
+                                <img class="ee" src="${book.img}">
+                                <h2>${book.name}</h2>
+                                <h3>${book.author}</h3>
+                                <a  href="${book.link}">
+                                    <button class="ed"> Read </button>
+                                </a>
+                            </div>`
+                        );
+                    }
+                }
+            })
+        
+        }));
 }
 
-function series(){
-    for (i in books){
-        if (i.type=="series"){
-            container.innerHTML('afterbegin', card);
-        }        
-    }
-}
 
-function ss(){
-    for (i in books){
-        if (i.type=="ss"){
-            container.innerHTML('afterbegin', card);
-        }        
-    }
-}
-
-all();
-
-document.querySelector(".all").addEventListener("click", all);
-document.querySelector(".ss").addEventListener("click", ss);
-document.querySelector(".series").addEventListener("click", series);
-
+disp();
 
 /*
 function inject(item){
