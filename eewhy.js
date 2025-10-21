@@ -17,7 +17,7 @@ function disp(){
     const btnArr = Array.from(buttons);
     btnArr.forEach(btn => 
         btn.addEventListener("click", function(show){
-            fltr = show.target.closest("button").getAttribute("class")
+            fltr = show.target.closest("button").getAttribute("arr")
             books.forEach(book => fbg(fltr));
         }));
 }
