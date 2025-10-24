@@ -25,12 +25,12 @@ h2{
     border-radius: 2%;
     border-color: #D6CFCB;
     font-size: 80%;
-    width: 60px;
+    width: 120px;
     height: 30px;
     transition: 0.5s;
     position: absolute;
-    bottom: 3%;
-    left: calc(50% - 30px);
+    bottom: 10%;
+    left: calc(50% - 60px);
 }
 .tri{
     align-content: center;
@@ -48,7 +48,7 @@ h2{
 }
 .card{
     width:28%;
-    height: 400px;
+    height: 600px;
     background-color: #CCB7AE;
     color:#565264;
     margin: 25px 0;
@@ -92,8 +92,8 @@ h2{
 
 .b{
     overflow: hidden;
-    background-color: #B3B492;
-    padding: 20px 10px;
+    background-color: #2b293f;
+    padding: 10px 15px;
 }
 
 .a {
@@ -101,9 +101,32 @@ h2{
 }
 
 .bb {
-    background-color: #A1CCA5;
+    background-color: #9a769b;
+    color:#D6CFCB;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 2%;
+    border-color: #D6CFCB;
+    font-size: 80%;
+    width: 120px;
+    height: 30px;
+    transition: 0.5s;
 }
 
-.bb:hover{
+.bo {
+    background-color: #A6808C;
+    color:#D6CFCB;
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 2%;
+    border-color: #D6CFCB;
+    font-size: 80%;
+    width: 120px;
+    height: 30px;
+    transition: 0.5s;
+    position: absolute;
+    bottom: 3%;
+    left: calc(50% - 60px);
+}
 
+.bo:hover, .bb:hover{
+    background-color: #593f5a;    
 }
