@@ -187,11 +187,11 @@ function all(){
 }
 
 function disp(){
-    const buttons = document.querySelectorAll("button");
+    const buttons = document.querySelectorAll(".w");
     const btnArr = Array.from(buttons);
     btnArr.forEach(btn => 
         btn.addEventListener("click", function(show){
-            let fltr = show.target.closest("button").getAttribute("class")
+            let fltr = show.target.closest(".w").getAttribute("cat")
             if (fltr == "all"){
                 all();
             }
