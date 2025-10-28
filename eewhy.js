@@ -221,13 +221,13 @@ function ac() {
             let tot = 0
             cart.forEach((item) => function(item){
                 tot += int(item.price);
-                cc.insertAdjacentHTML("beforeend", `
-                <h2>${item.n}</h2>
+                cc.insertAdjacentHTML("afterbegin", `
+                <h3>${item.n}</h3>
                 <p>$${item.p}</p>
                 `)
             })
-            cc.insertAdjacentHTML("beforeend", `
-                <h2>Total:$${tot}</h2>
+            cc.insertAdjacentElement("beforeend", `
+                <h3>Total:$${tot}</h3>
                 `
             )
         })
