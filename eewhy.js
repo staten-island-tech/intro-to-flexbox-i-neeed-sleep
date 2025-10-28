@@ -205,43 +205,40 @@ disp();
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-let cart = [];
+
 
 function ac() {
-    const bu = document.querySelectorAll(".bo");
-    const barr = Array.from(bu);
-    barr.forEach(b =>
-        b.addEventListener("click", function(aa){
+    let cart = [];
+    const cc = document.querySelector(".cc");
+    const crtbtn = document.querySelectorAll(".bo");
+    const buttonarr = Array.from(crtbtn);
+    buttonarr.forEach(button =>
+        button.addEventListener("click", function(aa){
             let adbp = aa.target.closest(".bo").getAttribute("p");
             let adbn = aa.target.closest(".bo").getAttribute("n");
-            cart.push({n:adbn, p:adbp});
+            cart.push({"n":adbn, "p":adbp});
+            
+            let tot = 0
+            cart.forEach((item) => function(item){
+                tot += int(item.price);
+                cc.insertAdjacentHTML("beforeend", `
+                <h2>${item.n}</h2>
+                <p>$${item.p}</p>
+                `)
+            })
+            cc.insertAdjacentHTML("beforeend", `
+                <h2>Total:$${tot}</h2>
+                `
+            )
         })
     )
+
+    
 }
+
 
 ac();
 
-function ic(i){
-    const cc = document.querySelector(".cc");
-    cc.insertAdjacentHTML("beforeend", `
-        <h2>${i.n}</h2>
-        <p>$${i.p}</p>
-        `
-    )
-}
-
-function pa(){
-    const ccc = document.querySelector(".ccc");
-    cart.forEach((i) => ic(i))
-    let tot = 0
-    cart.forEach((i) => function(i){
-        tot += i;
-    })
-    ccc.insertAdjacentHTML("beforeend", `
-        <h2>Total:${tot}</h2>
-        `
-    )
-}
 
 
 /*
