@@ -153,12 +153,12 @@ function add(books){
         <div class="card" data-genre ="${books.type}">
             <img class="ee" src="${books.img}">
             <h2>${books.name}</h2>
-            <p>Author: ${books.author}</p>
-            <p>Price: $${books.price}</p>
+            <h3>Author: ${books.author}</h3>
+            <h4>Price: $${books.price}</h4>
             <a  href="${books.link}">
                 <button class="ed"> Read </button>
             </a>
-            <button class ="bo" n="${books.name}" p="${books.price}"> Add To Cart</button>
+            <button class ="bo>Add To Cart</button>
         </div>
         `
     )
@@ -205,28 +205,25 @@ disp();
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-
+cart = []
 
 function ac() {
-    let cart = [];
     const cc = document.querySelector(".cc");
+    const ccc = document.querySelector(".ccc")
     const crtbtn = document.querySelectorAll(".bo");
     const buttonarr = Array.from(crtbtn);
     buttonarr.forEach(button =>
-        button.addEventListener("click", function(aa){
-            let adbp = aa.target.closest(".bo").getAttribute("p");
-            let adbn = aa.target.closest(".bo").getAttribute("n");
-            cart.push({"n":adbn, "p":adbp});
-            
-            let tot = 0
-            cart.forEach((item) => function(item){
-                tot += int(item.price);
-                cc.insertAdjacentHTML("afterbegin", `
-                <h3>${item.n}</h3>
-                <p>$${item.p}</p>
-                `)
-            })
-            cc.insertAdjacentElement("beforeend", `
+        button.addEventListener(("click"), function(event){
+            const data = event.target.closest(".card");
+            const cpa = data.querySelector("h4").textContent;
+            const cn = data.querySelector("h2").textContent;
+            const cp = parseInt(cp.replace("Price: $",""))
+            cart.push(cp)
+
+            tot += int(item.price);
+            cc.insertAdjacentHTML("beforeend", 
+                `<h3>${adbn}         $${adbp}</h3>`)
+            ccc.innerHTML("beforeend", `
                 <h3>Total:$${tot}</h3>
                 `
             )
@@ -237,7 +234,7 @@ function ac() {
 }
 
 
-ac();
+
 
 
 
