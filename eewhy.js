@@ -4,7 +4,7 @@ const books = [{
     img: "tywp.jpg",
     type:"ss",
     link: "https://www.nlm.nih.gov/exhibition/theliteratureofprescription/exhibitionAssets/digitalDocs/The-Yellow-Wall-Paper.pdf",
-    price: 1.00
+    price: 11.00
 },{
     name:"11:59",
     author:"Patricia C. McKissack",
@@ -152,13 +152,13 @@ function add(books){
     container.insertAdjacentHTML("afterbegin", `
         <div class="card" data-genre ="${books.type}">
             <img class="ee" src="${books.img}">
-            <h2>${books.name}</h2>
+            <h2 class ="ha">${books.name}</h2>
             <h3>Author: ${books.author}</h3>
-            <h4>Price: $${books.price}</h4>
+            <h4 class ="hb">Price: $${books.price}</h4>
             <a  href="${books.link}">
                 <button class="ed"> Read </button>
             </a>
-            <button class ="bo>Add To Cart</button>
+            <button class ="bo">Add To Cart</button>
         </div>
         `
     )
@@ -201,40 +201,41 @@ function disp(){
         }));
 }
 
-disp();
+disp;
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 cart = []
 
+function tot(){
+    t = 0
+    cart.forEach((thing) => {
+        t += thing
+    })
+    document.querySelector(".cct").textContent = `Total: $${t}`;
+}
+
 function ac() {
     const cc = document.querySelector(".cc");
-    const ccc = document.querySelector(".ccc")
     const crtbtn = document.querySelectorAll(".bo");
     const buttonarr = Array.from(crtbtn);
     buttonarr.forEach(button =>
         button.addEventListener(("click"), function(event){
             const data = event.target.closest(".card");
-            const cpa = data.querySelector("h4").textContent;
-            const cn = data.querySelector("h2").textContent;
-            const cp = parseInt(cp.replace("Price: $",""))
-            cart.push(cp)
+            const cn = data.querySelector(".ha").textContent;
+            const cpa = data.querySelector(".hb").textContent;
+            const cp = parseInt(cpa.replace("Price: $",""));
+            cart.push(cp);
 
-            tot += int(item.price);
-            cc.insertAdjacentHTML("beforeend", 
-                `<h3>${adbn}         $${adbp}</h3>`)
-            ccc.innerHTML("beforeend", `
-                <h3>Total:$${tot}</h3>
-                `
-            )
+            document.querySelector("ci").insertAdjacentHTML("beforeend", 
+                `<h3>${cn}  $${cp}</h3>`);
+            tot;
         })
-    )
-
-    
+    )    
 }
 
-
-
+ac;
+tot;
 
 
 

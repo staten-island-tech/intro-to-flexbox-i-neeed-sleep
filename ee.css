@@ -46,6 +46,7 @@ h4, h3, h2 {
     font-size: 80%;
     width: 120px;
     height: 30px;
+    transition: 0.5s;
 }
 .card{
     width:28%;
@@ -68,10 +69,20 @@ h4, h3, h2 {
     flex-wrap: wrap;
 }
 
+.c {
+    margin: 15px;
+}
+
+.cc, .ci, .cct{
+    width: 90w;
+    background-color: #9a769b;
+    color:#2b293f;
+}
+
 .card:hover {
     transform: scale(1.05);
 }
-.ed:hover {
+.ed:hover, .w:hover, .bo:hover{
     background-color:#c297a6 ;
     color: #565264;
 }
@@ -101,18 +112,6 @@ h4, h3, h2 {
     float:right;
 }
 
-.bb {
-    background-color: #9a769b;
-    color:#D6CFCB;
-    font-family: 'Courier New', Courier, monospace;
-    border-radius: 2%;
-    border-color: #D6CFCB;
-    font-size: 80%;
-    width: 120px;
-    height: 30px;
-    transition: 0.5s;
-}
-
 .bo {
     background-color: #A6808C;
     color:#D6CFCB;
@@ -126,8 +125,4 @@ h4, h3, h2 {
     position: absolute;
     bottom: 3%;
     left: calc(50% - 60px);
-}
-
-.bo:hover, .bb:hover{
-    background-color: #593f5a;    
 }
