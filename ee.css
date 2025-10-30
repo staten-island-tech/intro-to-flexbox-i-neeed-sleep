@@ -77,6 +77,7 @@ h4, h3, h2 {
     width: 90w;
     background-color: #9a769b;
     color:#2b293f;
+    margin: 15px;
 }
 
 .card:hover {

@@ -4,7 +4,7 @@ const books = [{
     img: "tywp.jpg",
     type:"ss",
     link: "https://www.nlm.nih.gov/exhibition/theliteratureofprescription/exhibitionAssets/digitalDocs/The-Yellow-Wall-Paper.pdf",
-    price: 11.00
+    price: 1.00
 },{
     name:"11:59",
     author:"Patricia C. McKissack",
@@ -152,9 +152,9 @@ function add(books){
     container.insertAdjacentHTML("afterbegin", `
         <div class="card" data-genre ="${books.type}">
             <img class="ee" src="${books.img}">
-            <h2 class ="ha">${books.name}</h2>
+            <h2 class ="name">${books.name}</h2>
             <h3>Author: ${books.author}</h3>
-            <h4 class ="hb">Price: $${books.price}</h4>
+            <h4 class ="price">Price: $${books.price}</h4>
             <a  href="${books.link}">
                 <button class="ed"> Read </button>
             </a>
@@ -216,58 +216,21 @@ function tot(){
 }
 
 function ac() {
-    const cc = document.querySelector(".cc");
     const crtbtn = document.querySelectorAll(".bo");
     const buttonarr = Array.from(crtbtn);
     buttonarr.forEach(button =>
-        button.addEventListener(("click"), function(event){
+        button.addEventListener("click", function(event){
             const data = event.target.closest(".card");
-            const cn = data.querySelector(".ha").textContent;
-            const cpa = data.querySelector(".hb").textContent;
+            const cn = data.querySelector(".name").textContent;
+            const cpa = data.querySelector(".price").textContent;
             const cp = parseInt(cpa.replace("Price: $",""));
             cart.push(cp);
 
             document.querySelector("ci").insertAdjacentHTML("beforeend", 
-                `<h3>${cn}  $${cp}</h3>`);
+                `<li>${cn}  $${cp}</li>`);
             tot;
         })
     )    
 }
 
 ac;
-tot;
-
-
-
-/*
-function inject(item){
-    const container = document.querySelector(".container");
-    container.insertAdjacentHTML("afterbegin", '<h1>$(item.name)</h1>');
-}
-
-function getCards(){
-    const buttons = document.querySelectorAll("buttons");
-    const btnArr = Array.from(buttons);
-    btnArr.forEach((btn => 
-        btn.addEventListener("click", function(event){
-            console.log(event.target.closest(".display-card").getAttribute("data-id"));
-        })));
-}
-getCards();
-*/
-
-//make array, put card on screen w/ js
-
-/*
-
-Method 1
-function filterbygenre(genre){
-    let display = document.querySelector("#card-display");
-    display.innerHTML = "";
-    const filterbooks = books.filter((book)=> book.genre === genre);
-}
-
-filterbygenre("mystery");
-
-*/
-
