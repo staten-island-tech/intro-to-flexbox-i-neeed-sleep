@@ -151,7 +151,7 @@ function add(books){
     const container = document.querySelector(".container");
     container.insertAdjacentHTML("afterbegin", `
         <div class="card" data-genre ="${books.type}">
-            <img class="ee" src="${books.img}">
+            <img class="ee" src="${books.img}"/>
             <h2 class ="name">${books.name}</h2>
             <h3>Author: ${books.author}</h3>
             <h4 class ="price">Price: $${books.price}</h4>
@@ -201,36 +201,39 @@ function disp(){
         }));
 }
 
-disp;
+disp();
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-cart = []
+let cart = [];
 
 function tot(){
-    t = 0
-    cart.forEach((thing) => {
-        t += thing
-    })
+    let t = 0;
+    let x = 0;
+    while (x < cart.length) {
+        t += cart[x];
+        x++;
+    }
     document.querySelector(".cct").textContent = `Total: $${t}`;
 }
 
 function ac() {
     const crtbtn = document.querySelectorAll(".bo");
-    const buttonarr = Array.from(crtbtn);
-    buttonarr.forEach(button =>
+    
+    crtbtn.forEach(button =>
         button.addEventListener("click", function(event){
             const data = event.target.closest(".card");
-            const cn = data.querySelector(".name").textContent;
             const cpa = data.querySelector(".price").textContent;
             const cp = parseInt(cpa.replace("Price: $",""));
+            const cn = data.querySelector(".name").textContent;
             cart.push(cp);
 
-            document.querySelector("ci").insertAdjacentHTML("beforeend", 
-                `<li>${cn}  $${cp}</li>`);
-            tot;
+            document.querySelector(".ci").insertAdjacentHTML("beforeend", 
+                `<ul>${cn}  $${cp}</ul>`
+            );
+            tot();
         })
     )    
 }
 
-ac;
+ac();
